@@ -1,16 +1,21 @@
 #!/bin/bash
 
-pacman -Sy figlet
-
-centrar_texto() {
-    texto="$1"
-    ancho_terminal=$(tput cols)
-    margen=$(( ($ancho_terminal - ${#texto}) / 2 ))
-    printf "%${margen}s%s\n" " " "$texto" | figlet
+# Función para centrar el texto generado por Figlet
+centrar_figlet() {
+    local texto="$1"
+    local ancho_terminal=$(tput cols)
+    local texto_figlet=$(figlet "$texto")
+    local num_lineas=$(echo "$texto_figlet" | wc -l)
+    local max_chars=$(echo "$texto_figlet" | awk '{ if (length > max) {max = length}} END {print max}')
+    local espacios=$(( ($ancho_terminal - $max_chars) / 2 ))
+    
+    # Imprimir las líneas centradas
+    echo "$texto_figlet" | sed "s/^/$(printf '%*s' $espacios)/"
 }
 
-centrar_texto "Install All?"
-echo "[y/n]"
+# Instalación de paquetes
+centrar_figlet "Install All?"
+echo "¿Instalar todo? (y/n)"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
     pacman -Sy --noconfirm lightdm qtile picom nitrogen nano neovim git mc ranger firefox tor lynx neofetch htop glances net-tools iproute2 curl nmap p7zip gpg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack lolcat tree
@@ -19,9 +24,22 @@ elif [ "$instalar_todo" = "n" ]; then
     echo "Loading Stuff"
 fi
 
-centrar_texto "Entorno Gráfico"
+# Función para preguntar y instalar paquetes
+preguntar_instalar() {
+    local nombre_paquete="$1"
+    centrar_figlet "$nombre_paquete"
+    echo "¿Instalar $nombre_paquete? (y/n)"
+    read respuesta
+    if [ "$respuesta" = "y" ]; then
+        pacman -Sy --noconfirm "$nombre_paquete"
+    elif [ "$respuesta" = "n" ]; then
+        echo "Saltando al siguiente apartado..."
+    fi
+}
+
+# Instalación de cada grupo de paquetes
+preguntar_instalar "Entorno Gráfico"
 echo "lightdm qtile picom nitrogen"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lightdm qtile picom nitrogen
@@ -29,9 +47,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Editor de Texto"
+preguntar_instalar "Editor de Texto"
 echo "nano neovim"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nano neovim
@@ -39,9 +56,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Administrador de Versiones"
+preguntar_instalar "Administrador de Versiones"
 echo "git"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm git
@@ -49,9 +65,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Explorador de Archivos"
+preguntar_instalar "Explorador de Archivos"
 echo "mc ranger"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mc ranger
@@ -59,9 +74,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Navegadores"
+preguntar_instalar "Navegadores"
 echo "firefox tor lynx"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm firefox tor lynx
@@ -69,9 +83,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Información del Sistema"
+preguntar_instalar "Información del Sistema"
 echo "neofetch htop glances net-tools iproute2 curl"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm neofetch htop glances net-tools iproute2 curl
@@ -79,9 +92,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Escaneo de Red"
+preguntar_instalar "Escaneo de Red"
 echo "nmap"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nmap
@@ -89,9 +101,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Comprimir Archivos"
+preguntar_instalar "Comprimir Archivos"
 echo "p7zip"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm p7zip
@@ -99,9 +110,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Encriptación de Datos"
+preguntar_instalar "Encriptación de Datos"
 echo "gpg"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gpg
@@ -109,9 +119,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Copias de Seguridad"
+preguntar_instalar "Copias de Seguridad"
 echo "rsync duplicity"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm rsync duplicity
@@ -119,9 +128,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Conversor de Imágenes a ASCII"
+preguntar_instalar "Conversor de Imágenes a ASCII"
 echo "jp2a"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm jp2a
@@ -129,9 +137,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Salvapantallas"
+preguntar_instalar "Salvapantallas"
 echo "cmatrix"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm cmatrix
@@ -139,9 +146,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Seguridad"
+preguntar_instalar "Seguridad"
 echo "fail2ban iptables openssh snort"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm fail2ban iptables openssh snort
@@ -149,9 +155,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Correo Electrónico"
+preguntar_instalar "Correo Electrónico"
 echo "mutt"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mutt
@@ -159,9 +164,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Gestor de Contraseñas"
+preguntar_instalar "Gestor de Contraseñas"
 echo "pass"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm pass
@@ -169,9 +173,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Juegos"
+preguntar_instalar "Juegos"
 echo "gnuchess frotz angband cataclysm-dda nethack"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gnuchess frotz angband cataclysm-dda nethack
@@ -179,9 +182,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
-centrar_texto "Misceláneo"
+preguntar_instalar "Misceláneo"
 echo "lolcat tree"
-echo "[y/n]"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lolcat tree
