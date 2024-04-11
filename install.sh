@@ -16,7 +16,6 @@ centrar_figlet() {
 # Función para preguntar y instalar paquetes
 preguntar_instalar() {
     local nombre_paquete="$1"
-    centrar_figlet "$nombre_paquete"
     echo "¿Instalar $nombre_paquete? (y/n)"
     read respuesta
     if [ "$respuesta" = "y" ]; then
@@ -27,6 +26,7 @@ preguntar_instalar() {
 }
 
 # Presentación de los paquetes
+centrar_figlet "Instalación de paquetes"
 centrar_figlet "Entorno Gráfico"
 echo "lightdm qtile picom nitrogen"
 preguntar_instalar "Entorno Gráfico"
