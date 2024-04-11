@@ -4,11 +4,14 @@ sudo su
 
 pacman -Sy figlet
 
-echo "Bienvenido/a al instalador de paquetes. ¿Deseas instalar todos los paquetes? (y/n)"
+figlet "Install All?"
+echo "[y/n]"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
     pacman -Sy --noconfirm lightdm qtile picom nitrogen nano neovim git mc ranger firefox tor lynx neofetch htop glances net-tools iproute2 curl nmap p7zip gpg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack lolcat tree
     exit 0
+if [ "$instalar_todo" = "n" ]; then
+    echo "Loading Stuff"
 fi
 
 figlet "Entorno Gráfico"
