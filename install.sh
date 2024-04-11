@@ -8,6 +8,7 @@ echo "Bienvenido/a al instalador de paquetes. ¿Deseas instalar los siguientes p
 
 figlet "Entorno Gráfico"
 echo "lightdm qtile picom nitrogen"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lightdm qtile picom nitrogen
@@ -17,6 +18,7 @@ fi
 
 figlet "Editor de Texto"
 echo "nano neovim"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nano neovim
@@ -26,6 +28,7 @@ fi
 
 figlet "Administrador de Versiones"
 echo "git"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm git
@@ -35,6 +38,7 @@ fi
 
 figlet "Explorador de Archivos"
 echo "mc ranger"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mc ranger
@@ -44,6 +48,7 @@ fi
 
 figlet "Navegadores"
 echo "firefox tor lynx"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm firefox tor lynx
@@ -53,6 +58,7 @@ fi
 
 figlet "Información del Sistema"
 echo "neofetch htop glances net-tools iproute2 curl"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm neofetch htop glances net-tools iproute2 curl
@@ -62,6 +68,7 @@ fi
 
 figlet "Escaneo de Red"
 echo "nmap"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nmap
@@ -71,6 +78,7 @@ fi
 
 figlet "Comprimir Archivos"
 echo "p7zip"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm p7zip
@@ -80,6 +88,7 @@ fi
 
 figlet "Encriptación de Datos"
 echo "gpg"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gpg
@@ -89,6 +98,7 @@ fi
 
 figlet "Copias de Seguridad"
 echo "rsync duplicity"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm rsync duplicity
@@ -98,6 +108,7 @@ fi
 
 figlet "Conversor de Imágenes a ASCII"
 echo "jp2a"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm jp2a
@@ -107,6 +118,7 @@ fi
 
 figlet "Salvapantallas"
 echo "cmatrix"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm cmatrix
@@ -116,6 +128,7 @@ fi
 
 figlet "Seguridad"
 echo "fail2ban iptables openssh snort"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm fail2ban iptables openssh snort
@@ -125,6 +138,7 @@ fi
 
 figlet "Correo Electrónico"
 echo "mutt"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mutt
@@ -134,6 +148,7 @@ fi
 
 figlet "Gestor de Contraseñas"
 echo "pass"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm pass
@@ -143,6 +158,7 @@ fi
 
 figlet "Juegos"
 echo "gnuchess frotz angband cataclysm-dda nethack"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gnuchess frotz angband cataclysm-dda nethack
@@ -152,6 +168,7 @@ fi
 
 figlet "Misceláneo"
 echo "lolcat tree"
+echo "y / n"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lolcat tree
