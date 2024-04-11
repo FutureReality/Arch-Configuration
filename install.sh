@@ -1,18 +1,17 @@
 #!/bin/bash
 
-pacman -Sy figlet cowsay
-
 mkdir aur
 
-cd aur
+mkdir aur/yay/
 
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.git aur/yay/
 
-exit
+makepkg -si aur/yay/
 
-cd  yay 
+sudo su 
 
-makepkg -si
+pacman -Sy figlet cowsay
+
 
 clear
 figlet "Install All?"
