@@ -1,17 +1,6 @@
 #!/bin/bash
 
-mkdir aur
-
-mkdir aur/yay/
-
-git clone https://aur.archlinux.org/yay.git aur/yay/
-
-makepkg -si aur/yay/
-
-sudo su 
-
 pacman -Sy figlet cowsay
-
 
 clear
 figlet "Install All?"
