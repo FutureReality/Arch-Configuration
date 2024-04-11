@@ -5,8 +5,9 @@ pacman -Sy figlet
 centrar_texto() {
     texto="$1"
     ancho_terminal=$(tput cols)
-    texto_centralizado=$(printf "%*s" $(((${#texto}+$ancho_terminal)/2)) "$texto")
-    figlet "$texto_centralizado"
+    texto_largo=$(echo "$texto" | wc -c)
+    margen=$(( ($ancho_terminal - $texto_largo) / 2 ))
+    printf "%*s\n" $margen "$texto" | figlet
 }
 
 centrar_texto "Install All?"
