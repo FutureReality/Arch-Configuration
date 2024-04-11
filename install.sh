@@ -13,17 +13,6 @@ centrar_figlet() {
     echo "$texto_figlet" | sed "s/^/$(printf '%*s' $espacios)/"
 }
 
-# Instalación de paquetes
-centrar_figlet "Install All?"
-echo "¿Instalar todo? (y/n)"
-read instalar_todo
-if [ "$instalar_todo" = "y" ]; then
-    pacman -Sy --noconfirm lightdm qtile picom nitrogen nano neovim git mc ranger firefox tor lynx neofetch htop glances net-tools iproute2 curl nmap p7zip gpg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack lolcat tree
-    exit 0
-elif [ "$instalar_todo" = "n" ]; then
-    echo "Loading Stuff"
-fi
-
 # Función para preguntar y instalar paquetes
 preguntar_instalar() {
     local nombre_paquete="$1"
@@ -37,156 +26,71 @@ preguntar_instalar() {
     fi
 }
 
-# Instalación de cada grupo de paquetes
-preguntar_instalar "Entorno Gráfico"
+# Presentación de los paquetes
+centrar_figlet "Entorno Gráfico"
 echo "lightdm qtile picom nitrogen"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lightdm qtile picom nitrogen
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Entorno Gráfico"
 
-preguntar_instalar "Editor de Texto"
+centrar_figlet "Editor de Texto"
 echo "nano neovim"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm nano neovim
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Editor de Texto"
 
-preguntar_instalar "Administrador de Versiones"
+centrar_figlet "Administrador de Versiones"
 echo "git"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm git
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Administrador de Versiones"
 
-preguntar_instalar "Explorador de Archivos"
+centrar_figlet "Explorador de Archivos"
 echo "mc ranger"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm mc ranger
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Explorador de Archivos"
 
-preguntar_instalar "Navegadores"
+centrar_figlet "Navegadores"
 echo "firefox tor lynx"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm firefox tor lynx
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Navegadores"
 
-preguntar_instalar "Información del Sistema"
+centrar_figlet "Información del Sistema"
 echo "neofetch htop glances net-tools iproute2 curl"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm neofetch htop glances net-tools iproute2 curl
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Información del Sistema"
 
-preguntar_instalar "Escaneo de Red"
+centrar_figlet "Escaneo de Red"
 echo "nmap"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm nmap
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Escaneo de Red"
 
-preguntar_instalar "Comprimir Archivos"
+centrar_figlet "Comprimir Archivos"
 echo "p7zip"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm p7zip
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Comprimir Archivos"
 
-preguntar_instalar "Encriptación de Datos"
+centrar_figlet "Encriptación de Datos"
 echo "gpg"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm gpg
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Encriptación de Datos"
 
-preguntar_instalar "Copias de Seguridad"
+centrar_figlet "Copias de Seguridad"
 echo "rsync duplicity"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm rsync duplicity
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Copias de Seguridad"
 
-preguntar_instalar "Conversor de Imágenes a ASCII"
+centrar_figlet "Conversor de Imágenes a ASCII"
 echo "jp2a"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm jp2a
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Conversor de Imágenes a ASCII"
 
-preguntar_instalar "Salvapantallas"
+centrar_figlet "Salvapantallas"
 echo "cmatrix"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm cmatrix
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Salvapantallas"
 
-preguntar_instalar "Seguridad"
+centrar_figlet "Seguridad"
 echo "fail2ban iptables openssh snort"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm fail2ban iptables openssh snort
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Seguridad"
 
-preguntar_instalar "Correo Electrónico"
+centrar_figlet "Correo Electrónico"
 echo "mutt"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm mutt
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Correo Electrónico"
 
-preguntar_instalar "Gestor de Contraseñas"
+centrar_figlet "Gestor de Contraseñas"
 echo "pass"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm pass
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Gestor de Contraseñas"
 
-preguntar_instalar "Juegos"
+centrar_figlet "Juegos"
 echo "gnuchess frotz angband cataclysm-dda nethack"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm gnuchess frotz angband cataclysm-dda nethack
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Juegos"
 
-preguntar_instalar "Misceláneo"
+centrar_figlet "Misceláneo"
 echo "lolcat tree"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lolcat tree
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
+preguntar_instalar "Misceláneo"
