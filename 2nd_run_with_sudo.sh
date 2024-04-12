@@ -182,3 +182,7 @@ if [ "$respuesta" = "y" ]; then
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
+
+systemctl restart lightdm.service
+
+reboot now
