@@ -3,7 +3,7 @@
 pacman -Sy figlet cowsay
 
 clear
-figlet "Install All?"
+figlet "¿Install All?"
 cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen" "[y/n]"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
@@ -14,7 +14,7 @@ elif [ "$instalar_todo" = "n" ]; then
 fi
 
 clear
-figlet "Entorno Gráfico"
+figlet "¿Graphic Environment?"
 cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -24,7 +24,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Editor de Texto"
+figlet "¿Text Editors?"
 cowsay -f /usr/share/cows/dragon.cow "nano neovim"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -34,7 +34,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Administrador de Versiones"
+figlet "¿Versions Manager?"
 cowsay -f /usr/share/cows/dragon.cow "git"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -44,7 +44,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Explorador de Archivos"
+figlet "¿File Explorers?"
 cowsay -f /usr/share/cows/dragon.cow "mc ranger"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -54,7 +54,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Navegadores"
+figlet "¿Browsers?"
 cowsay -f /usr/share/cows/dragon.cow "firefox tor lynx"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -64,7 +64,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Información del Sistema"
+figlet "¿System information?"
 cowsay -f /usr/share/cows/dragon.cow "neofetch htop glances net-tools iproute2 curl"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -74,7 +74,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Escaneo de Red"
+figlet "¿Web Scanner?"
 cowsay -f /usr/share/cows/dragon.cow "nmap"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -84,7 +84,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Comprimir Archivos"
+figlet "¿File Compressor?"
 cowsay -f /usr/share/cows/dragon.cow "p7zip"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -94,7 +94,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Encriptación de Datos"
+figlet "¿Data Encrypters?"
 cowsay -f /usr/share/cows/dragon.cow "gpg"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -104,7 +104,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Copias de Seguridad"
+figlet "¿Security Copies?"
 cowsay -f /usr/share/cows/dragon.cow "rsync duplicity"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -114,7 +114,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Conversor de Imágenes a ASCII"
+figlet "¿image to ASCII art?"
 cowsay -f /usr/share/cows/dragon.cow "jp2a"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -124,7 +124,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Salvapantallas"
+figlet "¿Screensavers?"
 cowsay -f /usr/share/cows/dragon.cow "cmatrix"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -134,7 +134,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Seguridad"
+figlet "¿Segurity?"
 cowsay -f /usr/share/cows/dragon.cow "fail2ban iptables openssh snort"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -144,7 +144,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Correo Electrónico"
+figlet "¿Mail?"
 cowsay -f /usr/share/cows/dragon.cow "mutt"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -154,7 +154,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Gestor de Contraseñas"
+figlet "¿Password Manager?"
 cowsay -f /usr/share/cows/dragon.cow "pass"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -164,7 +164,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Juegos"
+figlet "¿Games?"
 cowsay -f /usr/share/cows/dragon.cow "gnuchess frotz angband cataclysm-dda nethack"
 read respuesta
 if [ "$respuesta" = "y" ]; then
