@@ -15,10 +15,20 @@ fi
 
 clear
 figlet "¿Graphic Environment?"
-cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen"
+cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen arandr"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lightdm qtile picom nitrogen
+    pacman -Sy --noconfirm lightdm qtile picom nitrogen arandr
+elif [ "$respuesta" = "n" ]; then
+    echo "Saltando al siguiente apartado..."
+fi
+
+clear
+figlet "¿Terminal Emulators?"
+cowsay -f /usr/share/cows/dragon.cow "alacritty kitty"
+read respuesta
+if [ "$respuesta" = "y" ]; then
+    pacman -Sy --noconfirm alacritty kitty
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -35,20 +45,20 @@ fi
 
 clear
 figlet "¿Versions Manager?"
-cowsay -f /usr/share/cows/dragon.cow "git"
+cowsay -f /usr/share/cows/dragon.cow "git subversion"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm git
+    pacman -Sy --noconfirm git subversion
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
 clear
 figlet "¿File Explorers?"
-cowsay -f /usr/share/cows/dragon.cow "mc ranger"
+cowsay -f /usr/share/cows/dragon.cow "mc ranger fzf"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm mc ranger
+    pacman -Sy --noconfirm mc ranger fzf
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -65,70 +75,40 @@ fi
 
 clear
 figlet "¿System information?"
-cowsay -f /usr/share/cows/dragon.cow "neofetch htop glances net-tools iproute2 curl"
+cowsay -f /usr/share/cows/dragon.cow "neofetch htop glances net-tools btop usbutils pciutils"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm neofetch htop glances net-tools iproute2 curl
+    pacman -Sy --noconfirm neofetch htop glances net-tools btop usbutils pciutils
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
 clear
-figlet "¿Web Scanner?"
-cowsay -f /usr/share/cows/dragon.cow "nmap"
+figlet "¿Web Information?"
+cowsay -f /usr/share/cows/dragon.cow "nmap wireshark-cli nmap tcpdump strace iftop iproute2 curl"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm nmap
+    pacman -Sy --noconfirm nmap wireshark-cli nmap tcpdump strace iftop iproute2 curl
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
 clear
 figlet "¿File Compressor?"
-cowsay -f /usr/share/cows/dragon.cow "p7zip"
+cowsay -f /usr/share/cows/dragon.cow "p7zip tar zip unzip gzip bzip2"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm p7zip
+    pacman -Sy --noconfirm p7zip tar zip unzip gzip bzip2
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
 clear
-figlet "¿Data Encrypters?"
-cowsay -f /usr/share/cows/dragon.cow "gpg"
+figlet "¿Data Security?"
+cowsay -f /usr/share/cows/dragon.cow "gnupg rsync duplicity pass"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm gpg
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
-
-clear
-figlet "¿Security Copies?"
-cowsay -f /usr/share/cows/dragon.cow "rsync duplicity"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm rsync duplicity
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
-
-clear
-figlet "¿image to ASCII art?"
-cowsay -f /usr/share/cows/dragon.cow "jp2a"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm jp2a
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
-
-clear
-figlet "¿Screensavers?"
-cowsay -f /usr/share/cows/dragon.cow "cmatrix"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm cmatrix
+    pacman -Sy --noconfirm gnupg rsync duplicity pass
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -144,21 +124,11 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Mail?"
-cowsay -f /usr/share/cows/dragon.cow "mutt"
+figlet "¿Chat?"
+cowsay -f /usr/share/cows/dragon.cow "mutt ssh-chat"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm mutt
-elif [ "$respuesta" = "n" ]; then
-    echo "Saltando al siguiente apartado..."
-fi
-
-clear
-figlet "¿Password Manager?"
-cowsay -f /usr/share/cows/dragon.cow "pass"
-read respuesta
-if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm pass
+    pacman -Sy --noconfirm mutt ssh-chat
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -175,7 +145,7 @@ fi
 
 clear
 figlet "Misceláneo"
-cowsay -f /usr/share/cows/dragon.cow "lolcat tree"
+cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lolcat tree
