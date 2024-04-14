@@ -32,3 +32,4 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
+sudo reboot now
