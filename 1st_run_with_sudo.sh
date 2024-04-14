@@ -155,9 +155,3 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 mkdir ~/.config/kitty
-
-rm ~/.config/qtile/config.py
-rm ~/.config/kitty/kitty.conf
-
-cp ./config.py ~/.config/qtile/
-cp ./kitty.conf ~/.config/kitty/
