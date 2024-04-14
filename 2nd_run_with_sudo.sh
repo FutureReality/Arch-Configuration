@@ -7,7 +7,7 @@ figlet "¿Install All?"
 cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen" "[y/n]"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
-    pacman -Sy --noconfirm lightdm qtile picom nitrogen nano neovim git mc ranger firefox tor lynx neofetch htop glances net-tools iproute2 curl nmap p7zip rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack lolcat tree
+    pacman -Sy --noconfirm alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel
     exit 0
 elif [ "$instalar_todo" = "n" ]; then
     echo "Loading Stuff"
