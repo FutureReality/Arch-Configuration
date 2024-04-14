@@ -8,6 +8,7 @@ cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen" "[y/n]"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
     pacman -Sy --noconfirm alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel
+    yay -S --noconfirm lightdm-webkit2-greeter lightdm-webkit-theme-aether ri-li 2048-cli tetris moon-buggy
     exit 0
 elif [ "$instalar_todo" = "n" ]; then
     echo "Loading Stuff"
@@ -19,6 +20,7 @@ cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen arandr"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lightdm qtile picom nitrogen arandr
+    yay -S lightdm-webkit2-greeter lightdm-webkit-theme-aether
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -118,7 +120,8 @@ figlet "¿Segurity?"
 cowsay -f /usr/share/cows/dragon.cow "fail2ban iptables openssh snort"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm fail2ban iptables openssh snort
+    pacman -Sy --noconfirm fail2ban iptables openssh
+    yay -S --noconfirm snort
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -139,6 +142,7 @@ cowsay -f /usr/share/cows/dragon.cow "gnuchess frotz angband cataclysm-dda netha
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gnuchess frotz angband cataclysm-dda nethack
+    yay -S --noconfirm ri-li 2048-cli tetris moon-buggy
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
@@ -152,6 +156,12 @@ if [ "$respuesta" = "y" ]; then
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
+
+rm ~/.config/qtile/config.py
+rm ~/.config/kitty/kitty.conf
+
+cp ./config.py ~/.config/qtile/
+cp ./kitty.conf ~/.config/kitty/
 
 systemctl restart lightdm.service
 
