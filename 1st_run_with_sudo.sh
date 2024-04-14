@@ -159,7 +159,3 @@ rm ~/.config/kitty/kitty.conf
 
 cp ./config.py ~/.config/qtile/
 cp ./kitty.conf ~/.config/kitty/
-
-systemctl enable lightdm.service
-
-reboot now
