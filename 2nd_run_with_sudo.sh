@@ -4,7 +4,7 @@ pacman -Sy figlet cowsay
 
 clear
 figlet "¿Install All?"
-cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen" "[y/n]"
+cowsay -f /usr/share/cows/dragon.cow "alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel [y/n]"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
     pacman -Sy alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel
@@ -14,7 +14,7 @@ elif [ "$instalar_todo" = "n" ]; then
 fi
 
 clear
-figlet "¿Graphic Environment?"
+figlet "¿Graphic Environment? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "lightdm qtile picom nitrogen arandr"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -24,7 +24,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Terminal Emulators?"
+figlet "¿Terminal Emulators? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "alacritty kitty"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -34,7 +34,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Text Editors?"
+figlet "¿Text Editors? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "nano neovim"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -44,7 +44,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Versions Manager?"
+figlet "¿Versions Manager? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "git subversion"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -54,7 +54,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿File Explorers?"
+figlet "¿File Explorers? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "mc ranger fzf"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -64,7 +64,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Browsers?"
+figlet "¿Browsers? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "firefox tor lynx"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -74,7 +74,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿System information?"
+figlet "¿System information? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "neofetch htop glances net-tools btop usbutils pciutils"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -84,7 +84,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Web Information?"
+figlet "¿Web Information? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "nmap wireshark-cli nmap tcpdump strace iftop iproute2 curl"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -94,7 +94,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿File Compressor?"
+figlet "¿File Compressor? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "p7zip tar zip unzip gzip bzip2"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -104,7 +104,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Data Security?"
+figlet "¿Data Security? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "gnupg rsync duplicity pass"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -114,7 +114,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Segurity?"
+figlet "¿Segurity? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "fail2ban iptables openssh snort"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -125,7 +125,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Chat?"
+figlet "¿Chat? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "mutt ssh-chat"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -135,7 +135,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "¿Games?"
+figlet "¿Games? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "gnuchess frotz angband cataclysm-dda nethack"
 read respuesta
 if [ "$respuesta" = "y" ]; then
@@ -145,7 +145,7 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 clear
-figlet "Misceláneo"
+figlet "¿Misceláneo? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel"
 read respuesta
 if [ "$respuesta" = "y" ]; then
