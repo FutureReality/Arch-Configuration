@@ -154,6 +154,8 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
+mkdir ~/.config/kitty
+
 rm ~/.config/qtile/config.py
 rm ~/.config/kitty/kitty.conf
 
