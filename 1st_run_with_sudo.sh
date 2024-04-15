@@ -155,3 +155,4 @@ elif [ "$respuesta" = "n" ]; then
 fi
 
 mkdir ~/.config/kitty
+mkdir ~/.config/qtile
