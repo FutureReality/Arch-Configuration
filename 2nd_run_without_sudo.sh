@@ -32,4 +32,12 @@ elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
 
+systemctl enable lightdm.service
+
+rm ~/.config/qtile/config.py
+rm ~/.config/kitty/kitty.conf
+
+cp ./config.py ~/.config/qtile/
+cp ./kitty.conf ~/.config/kitty/
+
 sudo reboot now
