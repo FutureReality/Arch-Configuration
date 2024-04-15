@@ -4,10 +4,10 @@ pacman -Sy figlet cowsay
 
 clear
 figlet "¿Install All? [y/n]"
-cowsay -f /usr/share/cows/dragon.cow "lightdm light-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel nerd-fonts"
+cowsay -f /usr/share/cows/dragon.cow "lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel nerd-fonts"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
-    pacman -Sy lightdm light-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel nerd-fonts
+    pacman -Sy lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel nerd-fonts
     exit 0
 elif [ "$instalar_todo" = "n" ]; then
     echo "Loading Stuff"
@@ -18,7 +18,7 @@ figlet "¿Graphic Environment? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "lightdm lightdm-gtk-greeter qtile picom nitrogen arandr"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lightdm light-gtk-greeter qtile picom nitrogen arandr
+    pacman -Sy --noconfirm lightdm lightdm-gtk-greeter qtile picom nitrogen arandr
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
