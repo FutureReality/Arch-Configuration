@@ -1,5 +1,3 @@
-systemctl enable lightdm.service
-
 rm ~/.config/qtile/config.py
 rm ~/.config/kitty/kitty.conf
 
