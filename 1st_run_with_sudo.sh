@@ -7,7 +7,7 @@ figlet "¿Install All? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
-    pacman -Sy alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh snort mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel
+    pacman -Sy alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel
     exit 0
 elif [ "$instalar_todo" = "n" ]; then
     echo "Loading Stuff"
@@ -115,11 +115,11 @@ fi
 
 clear
 figlet "¿Segurity? [y/n]"
-cowsay -f /usr/share/cows/dragon.cow "fail2ban iptables openssh snort"
+cowsay -f /usr/share/cows/dragon.cow "fail2ban iptables openssh"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm fail2ban iptables openssh
-    yay -S --noconfirm snort
+    yay -S --noconfirm 
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
