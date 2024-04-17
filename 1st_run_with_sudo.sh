@@ -149,7 +149,7 @@ figlet "¿Misceláneo? [y/n]"
 cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel terminuss-font"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lolcat tree nerd-fonts
+    pacman -Sy --noconfirm lolcat tree terminuss-font
 elif [ "$respuesta" = "n" ]; then
     echo "Saltando al siguiente apartado..."
 fi
