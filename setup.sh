@@ -24,7 +24,7 @@ cowsay -f /usr/share/cows/dragon.cow "lightdm lightdm-gtk-greeter qtile picom ni
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lightdm lightdm-gtk-greeter qtile picom nitrogen arandr
-else; then
+else
     echo "Skipping graphic environment..."
 fi
 
@@ -34,7 +34,7 @@ cowsay -f /usr/share/cows/dragon.cow "alacritty kitty"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm alacritty kitty
-else; then
+else
     echo "Skipping terminal emulators..."
 fi
 
@@ -44,7 +44,7 @@ cowsay -f /usr/share/cows/dragon.cow "nano neovim"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nano neovim
-else; then
+else
     echo "Skipping text editors"
 fi
 
@@ -54,7 +54,7 @@ cowsay -f /usr/share/cows/dragon.cow "git subversion"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm git subversion
-else; then
+else
     echo "Skipping version managers..."
 fi
 
@@ -64,7 +64,7 @@ cowsay -f /usr/share/cows/dragon.cow "mc ranger fzf"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mc ranger fzf
-else; then
+else
     echo "Skipping file explorers..."
 fi
 
@@ -74,7 +74,7 @@ cowsay -f /usr/share/cows/dragon.cow "firefox tor lynx"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm firefox tor lynx
-else; then
+else
     echo "Skipping browsers..."
 fi
 
@@ -84,7 +84,7 @@ cowsay -f /usr/share/cows/dragon.cow "neofetch htop glances net-tools btop usbut
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm neofetch htop glances net-tools btop usbutils pciutils
-else; then
+else
     echo "Skipping system information and monitoring..."
 fi
 
@@ -94,7 +94,7 @@ cowsay -f /usr/share/cows/dragon.cow "nmap wireshark-cli tcpdump strace iftop ip
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm nmap wireshark-cli tcpdump strace iftop iproute2 curl
-else; then
+else
     echo "Skipping enumeration tools..."
 fi
 
@@ -104,7 +104,7 @@ cowsay -f /usr/share/cows/dragon.cow "p7zip tar zip unzip gzip bzip2"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm p7zip tar zip unzip gzip bzip2
-else; then
+else
     echo "Skipping file compressors..."
 fi
 
@@ -114,7 +114,7 @@ cowsay -f /usr/share/cows/dragon.cow "gnupg rsync duplicity pass"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gnupg rsync duplicity pass
-else; then
+else
     echo "Skipping information security..."
 fi
 
@@ -125,7 +125,7 @@ read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm fail2ban iptables openssh
     yay -S --noconfirm 
-else; then
+else
     echo "Skipping other network tools..."
 fi
 
@@ -135,7 +135,7 @@ cowsay -f /usr/share/cows/dragon.cow "mutt ssh-chat"
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm mutt ssh-chat
-else; then
+else
     echo "Skipping chat tools..."
 fi
 
@@ -145,7 +145,7 @@ cowsay -f /usr/share/cows/dragon.cow "gnuchess frotz angband cataclysm-dda netha
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm gnuchess frotz angband cataclysm-dda nethack
-else; then
+else
     echo "Skipping games..."
 fi
 
@@ -155,7 +155,7 @@ cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel ter
 read respuesta
 if [ "$respuesta" = "y" ]; then
     pacman -Sy --noconfirm lolcat tree terminuss-font
-else; then
+else
     echo "Skipping misc..."
 fi
 
@@ -178,7 +178,7 @@ cowsay -f /usr/share/cows/dragon.cow "lightdm-webkit2-greeter lightdm-webkit-the
 read respuesta
 if [ "$respuesta" = "y" ]; then
     sudo -u $USER yay -S --noconfirm lightdm-webkit2-greeter lightdm-webkit-theme-aether 
-else; then
+else
     echo "Skipping AUR env..."
 fi
 
@@ -188,7 +188,7 @@ cowsay -f /usr/share/cows/dragon.cow "ri-li 2048-cli tetris"
 read respuesta
 if [ "$respuesta" = "y" ]; then
   sudo -u $USER yay -S --noconfirm ri-li 2048-cli tetris
-else; then
+else
     echo "Skipping AUR games..."
 fi
 
