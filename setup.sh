@@ -11,10 +11,10 @@ pacman -Sy figlet cowsay
 clear
 
 figlet "¿Install All? [y/n]"
-cowsay -f /usr/share/cows/dragon.cow "lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel terminuss-font"
+cowsay -f /usr/share/cows/dragon.cow "lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel terminus-font"
 read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
-    pacman -Sy lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel terminuss-font && echo 'Everything installed!'
+    pacman -Sy lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel terminus-font && echo 'Everything installed!'
     exit 0
 fi
 clear
@@ -151,10 +151,10 @@ fi
 
 clear
 figlet "Misc? [y/n]"
-cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel terminuss-font"
+cowsay -f /usr/share/cows/dragon.cow "lolcat tree bc cmatrix jp2a base-devel terminus-font"
 read respuesta
 if [ "$respuesta" = "y" ]; then
-    pacman -Sy --noconfirm lolcat tree terminuss-font
+    pacman -Sy --noconfirm lolcat tree terminus-font
 else
     echo "Skipping misc..."
 fi
