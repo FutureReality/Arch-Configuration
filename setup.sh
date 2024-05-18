@@ -16,7 +16,7 @@ read instalar_todo
 if [ "$instalar_todo" = "y" ]; then
     pacman -Sy lightdm lightdm-gtk-greeter qtile picom nitrogen arandr alacritty kitty nano neovim git subversion mc ranger fzf firefox tor lynx neofetch htop glances net-tools iproute2 curl btop usbutils pciutils wireshark-cli nmap tcpdump strace iftop iputils net-tools traceroute p7zip tar zip unzip gzip bzip2 gnupg rsync duplicity jp2a cmatrix fail2ban iptables openssh mutt pass gnuchess frotz angband cataclysm-dda nethack bsd-games lolcat tree bc base-devel terminuss-font && echo 'Everything installed!'
     exit 0
-
+fi
 clear
 
 figlet "¿Graphic Environment? [y/n]"
