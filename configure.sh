@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
     cp ./assets/alacritty.toml ~/.config/alacritty/
 
     reboot now
-else; then
+else
   echo "[!] This script must NOT be executed as superuser!"
   exit 1
 fi
