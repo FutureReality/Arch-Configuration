@@ -1,0 +1,17 @@
+[window]
+	padding = {x = 15, y = 15}
+	decorations = "none"
+	opacity = 0.75
+	blur = true
+
+[font]
+	normal = {family = "Terminus", style = "Regular"}
+	size = 16
+
+[colors]
+	[colors.primary]
+
+		background = "#002700"
+		foreground = "#eeee00"
+
+	
